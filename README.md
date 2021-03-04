@@ -1,0 +1,1 @@
+This is a frontend application for monitoring NFC tag interactions on an Android App. On presentation and encoding of an NFC tag, the App relays the tag contents to Java microservice(Trilock) which relays changes on its repository onto the frontend

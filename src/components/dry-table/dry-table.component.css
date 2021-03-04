@@ -1,0 +1,48 @@
+
+.field-width-full{
+  width: 100%;
+}
+
+.icon-helper{
+  cursor: pointer;
+  color: #f79f56;
+}
+
+.button-cell{
+  text-align: right;
+  width: 180px;
+}
+
+.helper-cell{
+  text-align: right;
+
+}
+
+table {
+  width: 100%;
+}
+
+.action-cell{
+  text-align: right;
+}
+
+.bottom-form-part{
+  margin-top: 20px;
+}
+
+.button-row{
+  margin-top:20px;
+}
+
+.bottom-btn{
+  float: right;
+}
+
+.empty-table-message{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #a2a2a2;
+}
+
