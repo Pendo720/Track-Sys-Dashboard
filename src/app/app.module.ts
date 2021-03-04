@@ -16,12 +16,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { DryTableDataSource } from 'src/components/dry-table/dry-table-datasource';
 
 @NgModule({
   declarations: [
       AppComponent,
       DryTableComponent,
-      DryVisualComponent
+      DryVisualComponent,
+      DryTableDataSource
     ],
   imports: [
     BrowserModule,
