@@ -2,11 +2,12 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, MatCardModule ],
+      imports: [ RouterTestingModule, MatCardModule, HttpClientTestingModule ],
       declarations: [ AppComponent ],
     }).compileComponents();
   }));
@@ -17,9 +18,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Facade 2.0'`, () => {
+  it(`should have as title 'Facade 2.1'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Facade 2.0');
+    expect(app.title).toEqual('Facade 2.1');
   });
 });

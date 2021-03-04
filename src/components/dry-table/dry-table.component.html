@@ -5,7 +5,7 @@
       [length]="dataSource?.data.length"
       [pageIndex]="0"
       [pageSize]="10"
-      [pageSizeOptions]="[10, 15, 20]">
+      [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons>
     </mat-paginator>
   </ng-template>
 
@@ -15,16 +15,15 @@
   </div>
   
   <!-- table columns -->
-  <div style="margin-top: 24px;">
-    <br>
+  <div>
     <div>
-      <table mat-table class="full-width-table" matSort aria-describedby="" >
+      <table mat-table class="full-width-table" matSort aria-describedby="" style="background-color: transparent;">
 
         <ng-container *ngFor="let item of columnsTags; let i = index; last as lastItem;" 
                       matColumnDef={{tableFormat.columns[i].label}} >  
           <!-- control the display of row index       -->
           <ng-template #rowIndexPresent>
-            <th mat-header-cell *matHeaderCellDef style="width: 4%; font-weight: bolder;">{{tableFormat.columns[i].label}}</th>               
+            <th mat-header-cell *matHeaderCellDef style="width: 10%; font-weight: bolder;">{{tableFormat.columns[i].label}}</th>               
           </ng-template>
         
           <div *ngIf="tableFormat.columns[i].tag != 'rowIndex'; else rowIndexPresent">
@@ -39,9 +38,9 @@
           <!-- insert action controls -->
           <div *ngIf="tableFormat.columns[i].tag == 'actions' ">
             <div *ngFor="let doWhat of tableFormat.actions" style="float: left;">
-              <div *ngIf="doWhat.activator == 'button'" style="align-items: center;">
+              <div *ngIf="doWhat.activator == 'button'" style="align-items: center; margin:8px">
                 &nbsp;
-                <button mat-button (click)="onActionButtonClick(row)" color="primary" >{{doWhat.label}}
+                <button mat-raised-button color="primary" (click)="onActionButtonClick(row)" >{{doWhat.label}}
                 </button>
               </div>
             
@@ -58,11 +57,11 @@
         <tr mat-row *matRowDef="let row; columns: columnsTags;"></tr>
       </table>
     </div>
-    
+  
   </div>
 
   <!-- bottom paginator -->
-  <div *ngIf = "tableFormat?.paginator.show && tableFormat?.paginator.position.vertical == 'bottom';">
+  <div class="footer-item" *ngIf = "tableFormat?.paginator.show && tableFormat?.paginator.position.vertical == 'bottom';">
     <ng-container  *ngTemplateOutlet="pag;"></ng-container>
   </div>
 </div>

@@ -1,19 +1,48 @@
-
+<!-- <header>
+      <span><h1><b>{{title}}</b></h1></span>    
+</header>
+<div style="display: flex; margin: 24px; position:relative;"> 
+  <div style="width: 50%;">
+    <app-dry-table
+      [(dataSource)] = "entryList" 
+      [tableIndex] = 0 
+      [tableFormat] = "entryFormat"
+      (buttonClick)="onAction($event)"
+      (linkClick) = "onLink($event)">
+    </app-dry-table>
+  </div>
   
-
-<!-- Toolbar -->
-<div>
-  <mat-card class="card">
-    <mat-card-title><h1 id='title'>Facade 2.0</h1></mat-card-title>
-  </mat-card>
+  <div style="width: 50%;">
+    <app-dry-visual>        
+    </app-dry-visual>
+  </div>
 </div>
-
-<div class="content" role="main">
-<!-- <mat-sidenav-container>
-  <mat-sidenav>Freeway</mat-sidenav>
-</mat-sidenav-container> -->
-
+<footer>
+   <h3><b>{{footer}} &copy; 2020</b></h3>    
+</footer> -->
+<div class="app-root">
+  <div class="header-item">
+    <h1><b>{{title}}</b></h1>
+  </div>
+  <div class="main-container">
+    <div class="main-item">
+      <app-dry-table 
+        [(dataSource)] = "entryList" 
+        [tableIndex] = 0 
+        [tableFormat] = "entryFormat"
+        (buttonClick)="onAction($event)"
+        (linkClick) = "onLink($event)">
+      </app-dry-table>
+    </div>
+    <!-- <div class="main-item">
+      <app-dry-visual>        
+      </app-dry-visual>
+    </div>     -->
+  </div>
+  <div class="footer-item">
+    <h3><b>{{footer}} &copy; 2020</b></h3> 
+  </div> 
+  
 </div>
-
 
 <router-outlet></router-outlet>

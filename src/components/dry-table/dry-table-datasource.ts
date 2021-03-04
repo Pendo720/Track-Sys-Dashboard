@@ -3,13 +3,14 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Data source for the AppCommonTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
+@Component({template: ''})
 export class DryTableDataSource<T> extends DataSource<T> {
   @Input() data: T[];
   paginator: MatPaginator;

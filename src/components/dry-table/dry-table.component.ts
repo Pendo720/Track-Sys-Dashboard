@@ -30,7 +30,7 @@ export class DryTableComponent implements AfterViewInit, OnInit {
     });
 
     this.showRowIndex = this.tableFormat?.columns[0].tag === 'rowIndex';
-    if(this.dataSource){
+    if (this.dataSource){
       this.dataSource.data = [];
     }
   }
