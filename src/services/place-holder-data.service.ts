@@ -11,7 +11,7 @@ export class PlaceHolderDataService {
   constructor(private http: HttpClient) { }
 
   getData(){
-    return  this.http.get(this.apiUrl);
+    return  this.http.get(this.apiUrl + '/' + 'all');
   }
 
   update(event: any) {
