@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   entryList: MatTableDataSource<any>;
   entryFormat: any;
   today: string;
-  title = 'Facade 1.0';
-  footer = 'Facade';
+  title = 'Tri-Front';
+  footer = 'Tri-Front';
   entryData = [];
 
   constructor(private source: PlaceHolderDataService,
