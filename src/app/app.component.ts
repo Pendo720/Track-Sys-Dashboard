@@ -26,9 +26,10 @@ export class AppComponent implements OnInit {
                           paginator: {show: true,
                                       position: {vertical: 'bottom', horizontal: 'right'}},
                           columns: [{tag: 'rowIndex',     label: '#'},
-                                    {tag: 'reg',          label: 'Item'},
+                                    {tag: '_item',        label: 'Item'},
+                                    {tag: '_count',       label: 'Quantity'},
                                     {tag: 'actions',      label: 'Actions'}],
-                          actions: [{activator: 'button', label: 'Exit'}]
+                          actions: [{activator: 'button', label: 'Add'}]
                         };
   }
 
@@ -39,14 +40,13 @@ export class AppComponent implements OnInit {
           this.entryList.data = [];
             this.entryData = [];
             received.forEach(element => {
-                const item: any = {};
-                item.reg = element._item;
+                const item: any = element;
                 this.entryData.push(item);
-              });
+            });
 
-             this.entryList.data = this.entryData;
+            this.entryList.data = this.entryData;
         }
-      });
+    });
   }
 
   ngOnInit(): void {
@@ -56,11 +56,11 @@ export class AppComponent implements OnInit {
           if ( message.body ) {
 
             const msg = JSON.parse(message.body);
-            const target = JSON.parse(msg.payload);
+            const target = msg['payload'];
 
             console.log(message.body);
             if ( msg.event === 'updated' ) {
-              const cur = this.entryData.find(r => r.reg === target.reg);
+              const cur = this.entryData.find(r => r._id === target._id);
               this.entryData.splice(this.entryData.indexOf(cur), 1);
             }
 
@@ -68,9 +68,7 @@ export class AppComponent implements OnInit {
               this.entryData.push(target);
             }
 
-            // this.entryList.data = this.getFormatted();
             this.wslistener.holder.msgs.push(message.body);
-            this.refresh();
           }
       });
     });
@@ -79,36 +77,11 @@ export class AppComponent implements OnInit {
 
 
   onAction(event: any) {
-
-    event.left = true;
     this.source.update(event);
   }
 
   onLink(event: {'tableIndex': number}) {
    alert('Table ' + event.tableIndex + ': SEEN THAT DONE THAT AND LOOKING FOR NEW CHALLENGES!');
   }
-
-
-  // formatDuration( duration: number){
-  //   return (duration / 60000).toFixed(0);
-  // }
-
-  // formatTime(epoch){
-  //   const t =  new Date(epoch);
-  //   const h = t.getHours();
-  //   const m = t.getMinutes();
-  //   return (h < 10 ? ('0' + h) : h) + ':' + (m < 10 ? ('0' + m) : m);
-  // }
-
-  // getFormatted(){
-  //   const that = this;
-  //   const toReturn = JSON.parse(JSON.stringify(this.entryData));
-  //   toReturn.map(r => !r.left);
-  //   toReturn.sort((a, b) => a.time > b.time ? -1 : 1);
-  //   toReturn.forEach( (i: any) => { i.time = that.formatTime(i.time);
-  //                                   i.duration = that.formatDuration(i.duration);
-  //                                 });
-  //   return toReturn;
-  // }
 }
 

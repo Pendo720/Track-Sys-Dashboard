@@ -1,12 +1,14 @@
 <div>
   <!-- paginator template -->
   <ng-template #pag>
-    <mat-paginator #paginator style="float: {{tableFormat?.paginator.position.horizontal}};"
-      [length]="dataSource?.data.length"
-      [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons>
-    </mat-paginator>
+    <div>
+      <mat-paginator #paginator style="float: {{tableFormat?.paginator.position.horizontal}}"
+        [length]="dataSource?.data.length"
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10]">
+      </mat-paginator>
+    </div>
   </ng-template>
 
   <!-- top paginator -->
@@ -55,13 +57,13 @@
 
         <tr mat-header-row *matHeaderRowDef="columnsTags"></tr>
         <tr mat-row *matRowDef="let row; columns: columnsTags;"></tr>
-      </table>
-    </div>
-  
-  </div>
 
-  <!-- bottom paginator -->
-  <div class="footer-item" *ngIf = "tableFormat?.paginator.show && tableFormat?.paginator.position.vertical == 'bottom';">
-    <ng-container  *ngTemplateOutlet="pag;"></ng-container>
-  </div>
+      </table>
+      <!-- bottom paginator -->
+         
+    </div>
+    <div *ngIf = "tableFormat?.paginator.show && tableFormat?.paginator.position.vertical == 'bottom';">
+      <ng-container  *ngTemplateOutlet="pag;"></ng-container>
+    </div>
+    
 </div>

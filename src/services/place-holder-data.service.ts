@@ -16,9 +16,11 @@ export class PlaceHolderDataService {
 
   update(event: any) {
 
-    const headers = new HttpHeaders().set('Content-Type', 'application/text').set('method', 'PUT');
-    const reg = event.reg;
-    this.http.put(this.apiUrl + '/' + 'update' + '/' + reg, JSON.stringify(event), {headers}).subscribe(response => {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json')
+                                     .set('method', 'PUT');
+    // const reg = event.reg;
+    event._count += 1;
+    this.http.put(this.apiUrl + '/' + 'update', event, {headers}).subscribe(response => {
       console.log(response);
     });
   }

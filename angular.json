@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Facade": {
+    "Tri-Font": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Facade",
+            "outputPath": "dist/tri-font",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Facade:build"
+            "browserTarget": "Tri-Font:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Facade:build:production"
+              "browserTarget": "Tri-Font:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Facade:build"
+            "browserTarget": "Tri-Font:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Facade:serve"
+            "devServerTarget": "Tri-Font:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Facade:serve:production"
+              "devServerTarget": "Tri-Font:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Facade"
+  "defaultProject": "Tri-Font"
 }
