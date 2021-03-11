@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.header-item, .footer-item {
+.header-item {
   font-weight: bolder;  
   background-color: #1976d2;  
   color: #e6ebf1;
@@ -22,9 +22,19 @@ header-item div h1 {
   margin-top: 10px;
 }
 
-footer-item div h1 {
-  height: 50px;
-  margin-top: -50px;
+.footer-item{
+  height: 60px;
+  margin-top: -60px;
+  background-color: #1976d2;  
+  color: #e6ebf1;
+  border-radius: 4px;
+  /* padding: 5px; */
+  position: fixed;
+  left: 0.5%;
+  bottom: 0;
+  align-self: center;
+  /* text-align: center; */
+  width: 99%;
 }
 
 div h3 {

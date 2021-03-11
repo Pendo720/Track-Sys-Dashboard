@@ -2,10 +2,10 @@
   <!-- paginator template -->
   <ng-template #pag>
     <div>
-      <mat-paginator #paginator style="float: {{tableFormat?.paginator.position.horizontal}}"
+      <mat-paginator #paginator style="float: {{tableFormat?.paginator.position.horizontal}};"
         [length]="dataSource?.data.length"
         [pageIndex]="0"
-        [pageSize]="10"
+        [pageSize]="5"
         [pageSizeOptions]="[5, 10]">
       </mat-paginator>
     </div>

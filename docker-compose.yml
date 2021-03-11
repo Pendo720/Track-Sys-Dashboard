@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  trifont:
+    image: trifont
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4200:8080

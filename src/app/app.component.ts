@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   entryList: MatTableDataSource<any>;
   entryFormat: any;
   today: string;
-  title = 'Tri-Front';
-  footer = 'Tri-Front';
+  title = 'Tri-Font';
+  footer = 'Tri-Font';
   entryData = [];
 
   constructor(private source: PlaceHolderDataService,
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit {
             console.log(message.body);
             if ( msg.event === 'updated' ) {
               const cur = this.entryData.find(r => r._id === target._id);
-              this.entryData.splice(this.entryData.indexOf(cur), 1);
+              // this.entryData.splice(this.entryData.indexOf(cur), 1);
             }
 
             if ( msg.event === 'created' ) {
