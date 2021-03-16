@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   entryList: MatTableDataSource<any>;
   entryFormat: any;
   today: string;
-  title = 'WFront';
+  title = 'Track-Sys Dashboard';
   footer = 'WFront';
   entryData = [];
 
