@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   entryFormat: any;
   today: string;
   title = 'Track-Sys Dashboard';
-  footer = 'WFront';
+  footer = 'Track-Sys Dashboard';
   entryData = [];
 
   constructor(private source: PlaceHolderDataService,
