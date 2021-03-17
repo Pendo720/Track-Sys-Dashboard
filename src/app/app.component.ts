@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
                 this.entryData.push(item);
             });
 
+            this.entryData.sort((a,b)=>b._id-a._id);
             this.entryList.data = this.entryData;
         }
     });
@@ -65,7 +66,9 @@ export class AppComponent implements OnInit {
             }
 
             if ( msg.event === 'created' ) {
-              this.entryData.push(target);
+              this.entryData.unshift(target);
+              // this.entryData.push(target);
+              this.refresh();
             }
 
             this.wslistener.holder.msgs.push(message.body);

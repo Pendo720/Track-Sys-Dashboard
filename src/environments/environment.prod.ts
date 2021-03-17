@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  wsendpoint: 'https://habari-280610.ew.r.appspot.com/endpoint',
-  apiurl: 'https://habari-280610.ew.r.appspot.com'
+  production: true,  
+  wsendpoint: 'http://192.168.1.108:8080/endpoint',
+  apiurl: 'http://192.168.1.108:8080'
 };
