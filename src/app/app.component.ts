@@ -26,10 +26,11 @@ export class AppComponent implements OnInit {
                           paginator: {show: true,
                                       position: {vertical: 'bottom', horizontal: 'right'}},
                           columns: [{tag: 'rowIndex',     label: '#'},
-                                    {tag: '_item',        label: 'Item'},
-                                    {tag: '_count',       label: 'Quantity'},
+                                    {tag: '_item',         label: 'Reg'},
+                                    {tag: '_entryTime',   label: 'Entry(time)'},
+                                    {tag: '_duration',    label: 'Duration(mins)'},
                                     {tag: 'actions',      label: 'Actions'}],
-                          actions: [{activator: 'button', label: 'Add'}]
+                          actions: [{activator: 'button', label: 'Exit'}]
                         };
   }
 
@@ -61,8 +62,10 @@ export class AppComponent implements OnInit {
 
             console.log(message.body);
             if ( msg.event === 'updated' ) {
-              const cur = this.entryData.find(r => r._id === target._id);
+              var cur = this.entryData.find(r => r._id === target._id);
+              cur._duration = target._duration;
               // this.entryData.splice(this.entryData.indexOf(cur), 1);
+              this.refresh();
             }
 
             if ( msg.event === 'created' ) {
