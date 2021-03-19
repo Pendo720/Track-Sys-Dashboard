@@ -1,12 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { DryTableComponent } from '../components/dry-table/dry-table.component';
 import { DryVisualComponent } from '../components/dry-visual/dry-visual.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlaceHolderDataService } from '../services/place-holder-data.service';
@@ -38,7 +37,7 @@ import { DryTableDataSource } from 'src/components/dry-table/dry-table-datasourc
     MatGridListModule,
     MatDividerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
                 HttpClientModule,

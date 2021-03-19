@@ -1,3 +1,14 @@
+
+::ng-deep .mat-paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 56px;
+  padding: 0 8px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+}
+
 .app-root {
   display:flex;
   padding: 4px;
@@ -15,8 +26,6 @@
   margin-bottom: 0.5%;
   text-indent: 1%;
   border-radius: 4px;
-  /* padding: 1px; */
-  /* position: absolute; */
 }
 
 header-item div h2 {
@@ -32,13 +41,13 @@ header-item div h2 {
   border-radius: 4px;
   /* padding: 5px; */
   position: fixed;
-  left: 1%;
+  left: 0.5%;
   margin-bottom: 0.5%;
   bottom: 0;
   /* align-self: center; */
   /* text-align: center; */
   text-indent: 83%;
-  width: 98%;
+  width: 99%;
 }
 
 

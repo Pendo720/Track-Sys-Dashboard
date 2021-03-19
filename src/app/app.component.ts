@@ -42,7 +42,8 @@ export class AppComponent implements OnInit {
             this.entryData = [];
             received.forEach(element => {
                 const item: any = element;
-                this.entryData.push(item);
+                if(!item['_exited'])
+                  this.entryData.push(item);
             });
 
             this.entryData.sort((a,b)=>b._id-a._id);
@@ -84,6 +85,7 @@ export class AppComponent implements OnInit {
 
   onAction(event: any) {
     this.source.update(event);
+    event.srcElement.enable = false;
   }
 
   onLink(event: {'tableIndex': number}) {

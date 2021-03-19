@@ -18,9 +18,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Tri-Font 2.1'`, () => {
+  it(`should have as title 'Web-Font 1.0'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Tri-Font 2.1');
+    expect(app.title).toEqual('Web-Font 1.0');
   });
 });
