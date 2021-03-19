@@ -1,1 +1,5 @@
-This is a frontend application for monitoring NFC tag interactions on an Android App. On presentation and encoding of an NFC tag, the App relays the tag contents to Java microservice(Trilock) which relays changes on its repository onto the frontend
+> A frontend application for monitoring events on a microservice(TrackerMS) which processes events and relays resultant changes to any of its subscribers.
+> Provides a clear display of events
+> 
+> **Todo:**
+> - Add a graphical view into the events
