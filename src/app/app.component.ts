@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.entryList.data = [];
     this.entryFormat =  {
                           paginator: {show: true,
-                                      position: {vertical: 'bottom', horizontal: 'right'}},
+                          position: {vertical: 'bottom', horizontal: 'right'}},
                           columns: [{tag: 'rowIndex',     label: '#'},
                                     {tag: '_item',         label: 'Reg'},
                                     {tag: '_entryTime',   label: 'Entry(time)'},
@@ -70,8 +70,8 @@ export class AppComponent implements OnInit {
             }
 
             if ( msg.event === 'created' ) {
-              this.entryData.unshift(target);
-              // this.entryData.push(target);
+              // this.entryData.unshift(target);
+              this.entryData.push(target);
               this.refresh();
             }
 
