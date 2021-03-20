@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
                           position: {vertical: 'bottom', horizontal: 'right'}},
                           columns: [{tag: 'rowIndex',     label: '#'},
                                     {tag: '_item',         label: 'Reg'},
-                                    {tag: '_entryTime',   label: 'Entry(time)'},
+                                    {tag: '_formatedTime',   label: 'Entry(time)'},
                                     {tag: '_duration',    label: 'Duration(mins)'},
                                     {tag: 'actions',      label: 'Actions'}],
                           actions: [{activator: 'button', label: 'Exit'}]
@@ -42,8 +42,12 @@ export class AppComponent implements OnInit {
             this.entryData = [];
             received.forEach(element => {
                 const item: any = element;
-                if(!item['_exited'])
+                if(!item['_exited']){
+
+                  const fmt = new Date(item._entryTime);
+                  item._formatedTime = fmt.getDate() + '-' + (fmt.getMonth()+1) + '-' + fmt.getFullYear() + ' ' + fmt.getHours() + ':' + fmt.getMinutes();
                   this.entryData.push(item);
+                }
             });
 
             this.entryData.sort((a,b)=>b._id-a._id);
@@ -82,10 +86,10 @@ export class AppComponent implements OnInit {
     this.refresh();
   }
 
-
   onAction(event: any) {
+    event._exited = true;
+    delete event._formatedTime;
     this.source.update(event);
-    event.srcElement.enable = false;
   }
 
   onLink(event: {'tableIndex': number}) {

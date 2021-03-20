@@ -1,9 +1,11 @@
 .visual-contianer {
     display: flex;
+    position: relative;
     border-radius: 4px;
     align-items: center;
+    align-content: center;
     flex-direction: column;
-    min-height: 800px;
+    /* min-height: 800px; */
 }
 
 .header {
@@ -20,9 +22,12 @@
 }
 
 .svg-layout {
-    width: 500px;
-    height: 500px;
-    align-content: center;
+    width: 80%;
+    height: 80%;
+    display: inline;
+    /* position: relative; */
+    align-content: space-around;
+    align-self: auto;
     color: black;
 }
 
